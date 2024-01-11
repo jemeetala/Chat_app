@@ -1,43 +1,27 @@
 <%- include("layouts/header.ejs") %>
-<h2 class="mb-4">Hii, <%= user.name %></h2>
+<h2 class="mb-4">Hii, <%= user.name %>
+</h2>
 
 <div class="row">
   <div class="col-md-3">
     <ul class="list-group">
-      <%
-
-            if(users.length > 0){
-                for(let i=0; i < users.length; i++){
-                    %>
+      <% if(users.length> 0){
+          for(let i=0; i < users.length; i++){ %>
       <li class="list-group-item list-group-item-dark cursor-pointer user-list" data-id="<%= users[i]['_id'] %>">
         <img src="data:image/jpeg;base64,<%= users[i]['image'] %>" alt="" height="50px" width="50px">
 
         <%= users[i]['name'] %>
 
-        <% 
-                            if(users[i]['is_online']==1){
-                                %>
+        <% if(users[i]['is_online']==1){ %>
 
         <sup class="online-status" id="<%= users[i]['_id'] %>-status">Online</sup>
-        <%
-                            }else{
-                                %>
+        <% }else{ %>
 
         <sup class="offline-status" id="<%= users[i]['_id'] %>-status">Offline</sup>
-        <%
-                            }
-                        %>
-
-
-
-
-
+        <% } %>
       </li>
 
-      <%
-                }
-            } 
-            %>
+      <% } } %>
 
     </ul>
   </div>
@@ -77,8 +61,6 @@
   </div>
 </div>
 
-
-
 <!-- data-toggle="modal" data-target="#deleteChatModal" -->
 <!--delete  Modal -->
 <div class="modal fade" id="deleteChatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -104,8 +86,6 @@
     </div>
   </div>
 </div>
-
-
 
 <!--update  Modal -->
 <div class="modal fade" id="editChatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

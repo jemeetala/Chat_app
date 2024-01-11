@@ -12041,3 +12041,25 @@
       margin: 10px;
       color: black;
     }
+
+    .addMemberTable {
+      overflow-y: scroll;
+      height: 100px;
+      width: 100%;
+    }
+  /*group chat css */
+    #group-chat-container {
+      background-color: lightgray;
+      width: 100%;
+      height: 400px;
+      overflow: scroll;
+    }
+    .group-chat-section {
+      display: none;
+    }
+    .user-chat-image{
+      width:25px;
+      height:25px;
+      border-radius: 100px;
+      border:1px solid red;
+    }
